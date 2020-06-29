@@ -11,13 +11,13 @@ let index ={
         res.write(homePage.titulo +'\n \n');
         // Cantidad de peliculas
         res.write("Total: " + homePage.cantidad() + '\n \n');
-        //Películas ordenadas
+        // Películas ordenadas
         let titulos = homePage.listarPelis();
         for (titulo of titulos) {
             res.write(titulo)
             res.write('\n')
         }
-        //Pie de página
+        // Pie de página
         res.write('\n')
         res.write('Recorda que podes visitar las secciones: \n \n')
         res.write('En Carteleta \n')
@@ -28,7 +28,7 @@ let index ={
         res.end()
     },
     enCartelera: function(res){
-        //Título
+        // Título
         res.write(enCartelera.titulo +'\n \n');
         // Cantidad de peliculas
         res.write("Total: " + homePage.cantidad() + '\n \n');
@@ -47,11 +47,11 @@ let index ={
         res.end();
     },
     masVotadas: function(res){
-        //Título
+        // Título
         res.write(masVotadas.titulo +'\n \n');
         // Cantidad de peliculas
         res.write(`Total: ${masVotadas.cantidad()}\n \n`);
-        //Rating promedio
+        // Rating promedio
         res.write(`Promedio de Ratings: ${masVotadas.ratingPromedio()} \n \n`);
         // Títulos de películas con su rating y reseñas
         let pelis = masVotadas.listarPelis();     
@@ -70,11 +70,11 @@ let index ={
         res.end();
     },
     sucursales: function(res){
-        //Título
+        // Título
         res.write(sucursales.titulo +'\n \n');
         // Cantidad de salas
         res.write("Total: " + sucursales.cantidadSalas() + '\n \n');
-        //Lista de salas: Nombre, Direccion y Descripcion
+        // Lista de salas: Nombre, Direccion y Descripcion
         let salas = sucursales.leerJSON();           
         salas.theaters.forEach(function(datos){
         res.write("---------------------------------------------------------------------------------------------------------------------\n")
@@ -91,18 +91,18 @@ let index ={
         res.end();
     },
     contacto: function(res){
-        //Título
+        // Título
         res.write(contacto.titulo + "\n \n")
-        //Contenido
+        // Contenido
         res.write(contacto.contenido + "\n \n")
         res.end();
     },
     preguntasFrecuentes: function(res){
-        //Título
+        // Título
         res.write(preguntasFrecuentes.titulo + "\n \n")
-        //Total de preguntas
+        // Total de preguntas
         res.write("Total de preguntas: " + preguntasFrecuentes.cantidadPreguntas() + "\n \n")
-        //Listado de preguntas y respuestas
+        // Listado de preguntas y respuestas
         let preguntas = preguntasFrecuentes.leerJSON();
         preguntas.faqs.forEach(function(PyR){
             res.write("---------------------------------------------------------------------------------------------------------------------\n")
