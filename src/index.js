@@ -70,11 +70,11 @@ let index ={
         res.end();
     },
     sucursales: function(res){
-        //titulo
+        //Título
         res.write(sucursales.titulo +'\n \n');
-        //cantidad de salas
+        // Cantidad de salas
         res.write("Total: " + sucursales.cantidadSalas() + '\n \n');
-        //lista de salas: Nombre, Direccion y Descripcion
+        //Lista de salas: Nombre, Direccion y Descripcion
         let salas = sucursales.leerJSON();           
         salas.theaters.forEach(function(datos){
         res.write("---------------------------------------------------------------------------------------------------------------------\n")
@@ -91,18 +91,18 @@ let index ={
         res.end();
     },
     contacto: function(res){
-        //titulo
+        //Título
         res.write(contacto.titulo + "\n \n")
-        //contenido
+        //Contenido
         res.write(contacto.contenido + "\n \n")
         res.end();
     },
     preguntasFrecuentes: function(res){
-        //titulo
+        //Título
         res.write(preguntasFrecuentes.titulo + "\n \n")
-        //total de preguntas
+        //Total de preguntas
         res.write("Total de preguntas: " + preguntasFrecuentes.cantidadPreguntas() + "\n \n")
-        //listado de preguntas y respuestas
+        //Listado de preguntas y respuestas
         let preguntas = preguntasFrecuentes.leerJSON();
         preguntas.faqs.forEach(function(PyR){
             res.write("---------------------------------------------------------------------------------------------------------------------\n")
